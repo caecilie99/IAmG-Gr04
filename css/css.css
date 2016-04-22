@@ -161,20 +161,16 @@ ul {
     overflow: hidden;
 }
 
-.myThumbView .topdiv {
-    display: none;
-}
-
-.myThumbView .bottomdiv {
+.myThumbView .topmidbotdiv {
     display: none;
 }
 
 .myThumbView .option2 {
     position:absolute;
-    right:3px;
-    bottom: 5px;
+    right:0;
+    bottom: 0;
     padding: 0;
-    width: 50%;
+    width: 30%;
     height: 50%;
     box-sizing: border-box;
     background-image: url("./img/glyphicons/png/glyphicons-518-option-vertical.png");
@@ -222,12 +218,9 @@ ul {
     display: none;
 }
 
-.myListView .topdiv {
+.myListView .topmidbotdiv {
     display: block;
-}
-
-.myListView .bottomdiv {
-    display: block;
+    height: 33%;
 }
 
 .myListView .right-part {
@@ -238,14 +231,11 @@ ul {
     color: lightgray;
     font-size: small;
     line-height: 1.1;
-    padding-top: 3px;
 }
 
 .name{
-    margin-bottom: 5px;
     font-size: medium;
     line-height: 1.1;
-    padding-top: 3px;
 }
 
 .myListView .option {

@@ -29,7 +29,7 @@ function createListElementForContentItem(akt) {
     divleft.appendChild(divoption2);
 
     var divtop = document.createElement("div");
-    divtop.className = "topdiv";
+    divtop.className = "topmidbotdiv";
     li.appendChild(divtop);
 
     var added = document.createElement("h2");
@@ -42,13 +42,17 @@ function createListElementForContentItem(akt) {
     owner.className = "owner";
     divtop.appendChild(owner);
 
+    var divmid = document.createElement("div");
+    divmid.className = "topmidbotdiv";
+    li.appendChild(divmid);
+
     var name = document.createElement("h3");
     name.textContent = item.name;
     name.className = "name";
-    divtop.appendChild(name);
+    divmid.appendChild(name);
 
     var divbottom = document.createElement("div");
-    divbottom.className = "bottomdiv";
+    divbottom.className = "topmidbotdiv";
     li.appendChild(divbottom);
 
     var divplay = document.createElement("div");
