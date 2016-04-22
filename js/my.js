@@ -91,7 +91,12 @@ function createNewItems(){
 window.addEventListener('DOMContentLoaded', loadNewItems);
 
 function reload(){
-    location.reload(true);
+    //location.reload(true);
+    var element = document.getElementById("liste");
+    while (element.firstChild) {
+        element.removeChild(element.firstChild);
+    }
+    loadNewItems();
 }
 
 function addItem(){
