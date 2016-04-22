@@ -141,6 +141,7 @@ function fadeoutMain(event) {
 function fadeinMain(event) {
     var main = event.target;
     console.log("fadeoutToast(): " + main.textContent);
+
     /* remove tranistionend listener */
     main.addEventListener("transitionend", fadeoutMain);
     main.removeEventListener("transitionend", fadeinMain);
