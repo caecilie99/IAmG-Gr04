@@ -32,18 +32,20 @@ function createListElementForContentItem(akt) {
     divtop.setAttribute("class", "topdiv");
     li.appendChild(divtop);
 
-    var h2r = document.createElement("h2");
-    h2r.textContent = item.added;
-    h2r.setAttribute("class", "right-part");
-    divtop.appendChild(h2r);
+    var added = document.createElement("h2");
+    added.textContent = item.added;
+    added.setAttribute("class", "added right-part");
+    divtop.appendChild(added);
 
-    var h2 = document.createElement("h2");
-    h2.textContent = item.owner;
-    divtop.appendChild(h2);
+    var owner = document.createElement("h2");
+    owner.textContent = item.owner;
+    owner.setAttribute("class", "owner")
+    divtop.appendChild(owner);
 
-    var h3 = document.createElement("h3");
-    h3.textContent = item.name;
-    divtop.appendChild(h3);
+    var name = document.createElement("h3");
+    name.textContent = item.name;
+    name.setAttribute("class", "name");
+    divtop.appendChild(name);
 
     var divbottom = document.createElement("div");
     divbottom.setAttribute("class", "bottomdiv");
@@ -59,7 +61,7 @@ function createListElementForContentItem(akt) {
 
     var tags = document.createElement("h2");
     tags.textContent = item.numOfTags;
-    //tags.setAttribute("class", "button play");
+    tags.setAttribute("class", "numOfTags");
     divbottom.appendChild(tags);
 
     // add the element to the list

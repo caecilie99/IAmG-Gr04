@@ -227,13 +227,13 @@ ul {
     float: right;
 }
 
-.myListView li h2{
+.added, .owner, .numOfTags{
     font-size: small;
     line-height: 1.1;
     padding-top: 3px;
 }
 
-.myListView li h3{
+.name{
     margin-bottom: 5px;
     font-size: medium;
     line-height: 1.1;
