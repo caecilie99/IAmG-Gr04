@@ -9,6 +9,9 @@ function onListItemSelected(event) {
     if (event.eventPhase == Event.BUBBLING_PHASE) {
         // a helper function that looks up the target li element of the event
         function lookupEventTarget(el) {
+            if (el.classList.contains("option")){
+                return el;
+            }
             if (el.tagName.toLowerCase() == "li") {
                 return el;
             }
@@ -23,9 +26,20 @@ function onListItemSelected(event) {
 
         // lookup the target of the event
         var eventTarget = lookupEventTarget(event.target);
-        if (eventTarget) {
+        if(eventTarget.classList.contains("option") || eventTarget.classList.contains("option2")){
+            while (eventTarget.tagName.toLowerCase()!="li") {
+                eventTarget=eventTarget.parentNode;
+            }
+            var name = eventTarget.getElementsByTagName("h3")[0].textContent;
+            var src = eventTarget.getElementsByTagName("h2")[1].textContent;
+            alert(name+" "+src);
+        }
+        else if(eventTarget){
             // from the eventTarget, we find out the title of the list item, which is simply the text content of the li element
-            showToast("selected: " + eventTarget.textContent);
+            //showToast("selected: " + eventTarget.textContent);
+//            showToast("selected: " + titel);
+            var name = eventTarget.getElementsByTagName("h3")[0].textContent;
+            // alert(name);
         }
         else {
             showToast("list item target of event could not be determined!");
@@ -59,6 +73,52 @@ function toggleListeners() {
     }
 }
 
+/* main ausblenden, Ansicht wechseln und wieder einblenden */
+function changeMain(msg) {
+    var main = document.querySelector(".main");
+    if (main.classList.contains("active")) {
+        console.info("will not show toast msg " + msg + ". Toast is currently active, and no toast buffering has been implemented so far...");
+    }
+    else {
+        console.log("showToast(): " + msg);
+        //main.textContent = msg;
+        /* cleanup */
+        main.removeEventListener("transitionend",fadeoutMain);
+        /* initiate fading out the toast when the transition has finished nach Abschluss der Transition */
+        main.addEventListener("transitionend", fadeinMain);
+        main.classList.add("change");
+        main.classList.add("active");
+    }
+}
+
+function fadeoutMain(event) {
+    var main = event.target;
+    console.log("finaliseToast(): " + main.textContent);
+    main.classList.remove("active");
+
+}
+
+/* trigger fading out the toast and remove the event listener  */
+function fadeinMain(event) {
+    var main = event.target;
+    console.log("fadeoutToast(): " + main.textContent);
+
+    /* remove tranistionend listener */
+    main.addEventListener("transitionend", fadeoutMain);
+    main.removeEventListener("transitionend", fadeinMain);
+
+    var mainDiv = document.getElementById("mainDiv");
+
+    if(mainDiv.classList.contains("myListView")){
+        mainDiv.classList.remove("myListView");
+        mainDiv.classList.add("myThumbView")
+    }else{
+        mainDiv.classList.remove("myThumbView");
+        mainDiv.classList.add("myListView")
+    }
+
+    main.classList.remove("change");
+}
 /* show a toast and use a listener for transitionend for fading out */
 function showToast(msg) {
     var toast = document.querySelector(".toast");

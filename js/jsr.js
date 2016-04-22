@@ -1,6 +1,7 @@
 /**
  * Created by master on 01.03.16.
  */
+
 function loadNewItems() {
 
     // we initiate an xmlhttprequest and read out its body

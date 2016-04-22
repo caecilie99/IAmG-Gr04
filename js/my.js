@@ -2,28 +2,15 @@
  * Created by master on 01.03.16.
  */
 
-var myListItems = [
+var myListItems;
+var myNewItem =
 {
-    "name": "sed",
-    "owner": "lorempixel,com",
-    "added": "15.01.2016",
+    "name": "sedassdasd",
+    "owner": "lorempixel.com",
+    "added": (new Date()).toLocaleDateString(),
     "numOfTags": 9,
     "src": "http://lorempixel.com/200/200"
-},
-{
-    "name": "adispicing",
-    "owner": "lorempixel.com",
-    "added": "29.02.2016",
-    "numOfTags": 0,
-    "src": "http://lorempixel.com/200/150"
-},
-{
-    "name": "consectetur",
-    "owner": "lorempixel,com",
-    "added": (new Date()).toLocaleDateString(),
-    "numOfTags": 2,
-    "src": "http://lorempixel.com/150/200"
-}];
+};
 
 function createListElementForContentItem(akt) {
     var item = akt;
@@ -37,9 +24,9 @@ function createListElementForContentItem(akt) {
     img.src = item.src;
     divleft.appendChild(img);
 
-    var divoption = document.createElement("div");
-    divoption.setAttribute("class", "button option2");
-    divleft.appendChild(divoption);
+    var divoption2 = document.createElement("div");
+    divoption2.setAttribute("class", "button option2");
+    divleft.appendChild(divoption2);
 
     var divtop = document.createElement("div");
     divtop.setAttribute("class", "topdiv");
@@ -72,7 +59,7 @@ function createListElementForContentItem(akt) {
 
     var tags = document.createElement("h2");
     tags.textContent = item.numOfTags;
-    tags.setAttribute("class", "button play");
+    //tags.setAttribute("class", "button play");
     divbottom.appendChild(tags);
 
     // add the element to the list
@@ -99,9 +86,8 @@ function createNewItems(){
     myListItems.forEach(createListElementForContentItem);
 }
 
-window.addEventListener('DOMContentLoaded', createNewItems);
-
 // Ansicht zwischen Liste und Kacheln umschalten
+/* ist jetzt in jsl durch fadein und fadeout
 function switchView(){
     var mainDiv = document.getElementById("mainDiv");
 
@@ -110,57 +96,24 @@ function switchView(){
     }else{
         mainDiv.className="main myListView";
     }
-}
-
-/* main ausblenden, Ansicht wechseln und wieder einblenden */
-function changeMain(msg) {
-    var main = document.querySelector(".main");
-    if (main.classList.contains("active")) {
-        console.info("will not show toast msg " + msg + ". Toast is currently active, and no toast buffering has been implemented so far...");
-    }
-    else {
-        console.log("showToast(): " + msg);
-        //main.textContent = msg;
-        /* cleanup */
-        main.removeEventListener("transitionend",fadeoutMain);
-        /* initiate fading out the toast when the transition has finished nach Abschluss der Transition */
-        main.addEventListener("transitionend", fadeinMain);
-        main.classList.add("change");
-        main.classList.add("active");
-    }
-}
-
-function fadeoutMain(event) {
-    var main = event.target;
-    console.log("finaliseToast(): " + main.textContent);
-    main.classList.remove("active");
-
-}
-
-/* trigger fading out the toast and remove the event listener  */
-function fadeinMain(event) {
-    var main = event.target;
-    console.log("fadeoutToast(): " + main.textContent);
-
-    /* remove tranistionend listener */
-    main.addEventListener("transitionend", fadeoutMain);
-    main.removeEventListener("transitionend", fadeinMain);
-
-    var mainDiv = document.getElementById("mainDiv");
-
-    if(mainDiv.classList.contains("myListView")){
-        mainDiv.classList.remove("myListView");
-        mainDiv.classList.add("myThumbView")
-    }else{
-        mainDiv.classList.remove("myThumbView");
-        mainDiv.classList.add("myListView")
-    }
-
-    main.classList.remove("change");
-}
-
-// Umschalten bei Klick auf Button (div)
-/*
-window.onload = function() {
-    document.getElementsByClassName("button toggleView")[0].addEventListener("click", changeMain);
 }*/
+
+window.addEventListener('DOMContentLoaded', loadNewItems);
+
+function reload(){
+    location.reload(true);
+}
+
+function addItem(){
+    createListElementForContentItem(myNewItem);
+}
+
+// addListeners onload
+window.onload = function() {
+    // Reload Liste
+    document.getElementsByClassName("button refresh")[0].addEventListener("click", reload);
+    // Add Item
+    document.getElementsByClassName("button new-item")[0].addEventListener("click",addItem);
+    // alert Titel bei Klick auf li
+    document.getElementById('liste').addEventListener("click",onListItemSelected);
+}
