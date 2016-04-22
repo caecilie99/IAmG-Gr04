@@ -37,7 +37,6 @@ header h2 {
     margin: 0;
     font-weight: normal;
     display: inline-block;
-    text-transform: uppercase;
     line-height: 50px;
 }
 
@@ -84,6 +83,7 @@ header h2 {
 
 .new-item {
     background-image: url("./img/glyphicons/png/glyphicons-433-plus.png");
+    background-size: 80%;
     float: right;
 }
 
@@ -242,17 +242,15 @@ ul {
 .myListView .option {
     padding: 0;
     background-image: url("./img/glyphicons/png/glyphicons-518-option-vertical.png");
-    background-size: 6px 20px;
+    background-size: auto;
     background-position: right top;
     float: right;
 }
 
 .myListView .play {
     padding: 0;
-    line-height: 18px;
-
     background-image: url("./img/glyphicons/png/glyphicons-174-play.png");
-    background-size: 16px 18px;
+    background-size: auto;
     background-position: top left;
     float: left;
 }
@@ -281,13 +279,11 @@ footer {
 
 .logout {
     background-image: url("./img/glyphicons/png/glyphicons-388-log-out.png");
-    background-size: 21px 18px;
     float: left;
 }
 
 .refresh {
     background-image: url("./img/glyphicons/png/glyphicons-82-refresh.png");
-    background-size: 25px 26px;
     float: right;
 }
 
