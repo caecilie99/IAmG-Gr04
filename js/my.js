@@ -115,4 +115,6 @@ window.onload = function() {
     document.getElementsByClassName("button new-item")[0].addEventListener("click",addItem);
     // alert Titel bei Klick auf li
     document.getElementById('liste').addEventListener("click",onListItemSelected);
+    // toggle View
+    document.getElementsByClassName("button toggleView")[0].addEventListener("click",changeMain);
 };

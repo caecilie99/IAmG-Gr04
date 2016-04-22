@@ -70,6 +70,7 @@ header h2 {
     background-size: 22px 22px;
     float: right;
 }
+
 /*.listeners-active .toggle-listeners {
     background-image: url("./img/glyphicons/png/glyphicons-560-mic-mute.png");
     background-size: 23px 30px;
@@ -94,7 +95,7 @@ header h2 {
     float: right;
 }
 
-.main{
+.main {
     width: 100%;
     max-width: 100%;
     background-color: inherit;
@@ -114,6 +115,7 @@ header h2 {
     transition-delay: 0s;
     transition: opacity 2s;
 }
+
 /* main part of the view */
 
 .maincontent {
@@ -125,7 +127,6 @@ header h2 {
     overflow-y: scroll;
     overflow-x: hidden;
 }
-
 
 /* list and list items */
 ul {
@@ -142,10 +143,10 @@ ul {
     padding: 10px;
 }
 
-.myThumbView .left-part{
-    position:relative;
-    left:0;
-    top:0;
+.myThumbView .left-part {
+    position: relative;
+    left: 0;
+    top: 0;
     width: 60px;
     height: 60px;
     display: block;
@@ -153,10 +154,10 @@ ul {
     z-index: 1;
 }
 
-.myThumbView .left-part img{
-    position:absolute;
-    top:0;
-    left:0;
+.myThumbView .left-part img {
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 60px;
     height: 60px;
     overflow: hidden;
@@ -167,8 +168,8 @@ ul {
 }
 
 .myThumbView .option2 {
-    position:absolute;
-    right:0;
+    position: absolute;
+    right: 0;
     bottom: 0;
     padding: 0;
     width: 30%;
@@ -200,21 +201,22 @@ ul {
 }
 
 .myListView .left-part {
-    position:relative;
-    left:0;
-    top:0;
+    position: relative;
+    left: 0;
+    top: 0;
     width: auto;
     height: 100%;
     float: left;
-    margin-right:10px;
+    margin-right: 10px;
     z-index: 2;
 }
 
-.myListView .left-part img{
+.myListView .left-part img {
     width: 60px;
     height: 60px;
-    overflow : hidden;
+    overflow: hidden;
 }
+
 .myListView .option2 {
     display: none;
 }
@@ -228,13 +230,13 @@ ul {
     float: right;
 }
 
-.added, .owner, .numOfTags{
+.added, .owner, .numOfTags {
     color: lightgray;
     font-size: small;
     line-height: 1.1;
 }
 
-.name{
+.name {
     font-size: medium;
     line-height: 1.1;
 }
@@ -261,7 +263,7 @@ ul {
 }
 
 /* selected elements */
-li:active, .button:active  {
+li:active, .button:active {
     opacity: 0.1;
 }
 
