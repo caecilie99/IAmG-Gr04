@@ -27,10 +27,12 @@ header {
     width: 100%;
     max-width: 100%;
     overflow: visible;
-    box-shadow: 0 3px 0 darkgray ;
+    box-sizing: border-box;
+    box-shadow: 0 -3px 0 darkgray inset;
 }
 
 header h2 {
+    float: left;
     margin: 0;
     font-weight: normal;
     display: inline-block;
@@ -114,8 +116,6 @@ header h2 {
 /* main part of the view */
 
 .maincontent {
-    width: 100%;
-    max-width: 100%;
     background-color: inherit;
     height: calc(100% - (50px));
     height: -webkit-calc(100% - 50px);
@@ -191,8 +191,15 @@ ul {
     line-height: 80px;
     font-size: 20pt;
     padding: 10px;
-    border-bottom: 1px solid rgb(120,120,120);
-    color: lightgray;
+    border-top: 2px solid lightgray;
+}
+
+.myListView li:first-child {
+    height: 80px;
+    line-height: 80px;
+    font-size: 20pt;
+    padding: 10px;
+    border-top: none;
 }
 
 .myListView .left-part {
@@ -228,6 +235,7 @@ ul {
 }
 
 .added, .owner, .numOfTags{
+    color: lightgray;
     font-size: small;
     line-height: 1.1;
     padding-top: 3px;
@@ -237,7 +245,6 @@ ul {
     margin-bottom: 5px;
     font-size: medium;
     line-height: 1.1;
-    color: #000;
     padding-top: 3px;
 }
 
