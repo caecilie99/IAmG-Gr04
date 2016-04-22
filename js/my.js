@@ -17,7 +17,7 @@ function createListElementForContentItem(akt) {
     var li = document.createElement("li");
 
     var divleft = document.createElement("div");
-    divleft.setAttribute("class", "left-part");
+    divleft.className = "left-part";
     li.appendChild(divleft);
 
     var img = document.createElement("img");
@@ -25,43 +25,43 @@ function createListElementForContentItem(akt) {
     divleft.appendChild(img);
 
     var divoption2 = document.createElement("div");
-    divoption2.setAttribute("class", "button option2");
+    divoption2.className = "button option2";
     divleft.appendChild(divoption2);
 
     var divtop = document.createElement("div");
-    divtop.setAttribute("class", "topdiv");
+    divtop.className = "topdiv";
     li.appendChild(divtop);
 
     var added = document.createElement("h2");
     added.textContent = item.added;
-    added.setAttribute("class", "added right-part");
+    added.className = "added right-part";
     divtop.appendChild(added);
 
     var owner = document.createElement("h2");
     owner.textContent = item.owner;
-    owner.setAttribute("class", "owner")
+    owner.className = "owner";
     divtop.appendChild(owner);
 
     var name = document.createElement("h3");
     name.textContent = item.name;
-    name.setAttribute("class", "name");
+    name.className = "name";
     divtop.appendChild(name);
 
     var divbottom = document.createElement("div");
-    divbottom.setAttribute("class", "bottomdiv");
+    divbottom.className = "bottomdiv";
     li.appendChild(divbottom);
 
     var divplay = document.createElement("div");
-    divplay.setAttribute("class", "button play");
+    divplay.className = "button play";
     divbottom.appendChild(divplay);
 
     var divoption = document.createElement("div");
-    divoption.setAttribute("class", "button option");
+    divoption.className = "button option";
     divbottom.appendChild(divoption);
 
     var tags = document.createElement("h2");
     tags.textContent = item.numOfTags;
-    tags.setAttribute("class", "numOfTags");
+    tags.className = "numOfTags";
     divbottom.appendChild(tags);
 
     // add the element to the list

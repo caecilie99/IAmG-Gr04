@@ -171,15 +171,15 @@ ul {
 
 .myThumbView .option2 {
     position:absolute;
-    left:0;
-    top:0;
-    width: 100%;
-    height: 100%;
-    padding: 5px;
+    right:3px;
+    bottom: 5px;
+    padding: 0;
+    width: 50%;
+    height: 50%;
     box-sizing: border-box;
     background-image: url("./img/glyphicons/png/glyphicons-518-option-vertical.png");
     background-size: 6px 20px;
-    background-position: right bottom;
+    background-position: center;
     filter: invert(90%);
     -webkit-filter: invert(90%);
     float: right;
