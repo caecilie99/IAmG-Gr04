@@ -9,7 +9,7 @@ function onListItemSelected(event) {
     if (event.eventPhase == Event.BUBBLING_PHASE) {
         // a helper function that looks up the target li element of the event
         function lookupEventTarget(el) {
-            if (el.classList.contains("option")){
+            if (el.classList.contains("option")||el.classList.contains("option2" )){
                 return el;
             }
             if (el.tagName.toLowerCase() == "li") {
@@ -30,16 +30,17 @@ function onListItemSelected(event) {
             while (eventTarget.tagName.toLowerCase()!="li") {
                 eventTarget=eventTarget.parentNode;
             }
-            var name = eventTarget.getElementsByTagName("h3")[0].textContent;
-            var src = eventTarget.getElementsByTagName("h2")[1].textContent;
-            alert(name+" "+src);
+            // var name = eventTarget.getElementsByTagName("h3")[0].textContent;
+            //  var src = eventTarget.getElementsByTagName("h2")[1].textContent;
+            //  alert(name+" "+src);
+            eventTarget.remove();
         }
         else if(eventTarget){
             // from the eventTarget, we find out the title of the list item, which is simply the text content of the li element
-            //showToast("selected: " + eventTarget.textContent);
-//            showToast("selected: " + titel);
+            // showToast("selected: " + eventTarget.textContent);
+            // showToast("selected: " + titel);
             var name = eventTarget.getElementsByTagName("h3")[0].textContent;
-            // alert(name);
+            alert(name);
         }
         else {
             showToast("list item target of event could not be determined!");

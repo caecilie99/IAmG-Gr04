@@ -88,18 +88,6 @@ function createNewItems(){
     myListItems.forEach(createListElementForContentItem);
 }
 
-// Ansicht zwischen Liste und Kacheln umschalten
-/* ist jetzt in jsl durch fadein und fadeout
-function switchView(){
-    var mainDiv = document.getElementById("mainDiv");
-
-    if(mainDiv.getAttribute("class") == "main myListView"){
-        mainDiv.className="main myThumbView";
-    }else{
-        mainDiv.className="main myListView";
-    }
-}*/
-
 window.addEventListener('DOMContentLoaded', loadNewItems);
 
 function reload(){
@@ -118,4 +106,4 @@ window.onload = function() {
     document.getElementsByClassName("button new-item")[0].addEventListener("click",addItem);
     // alert Titel bei Klick auf li
     document.getElementById('liste').addEventListener("click",onListItemSelected);
-}
+};
