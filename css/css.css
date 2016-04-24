@@ -134,6 +134,7 @@ ul {
     border-top: 10px solid lightgray;
 }
 
+/* Elemente der Ansicht Thumbview*/
 .myThumbView li {
     display: inline-block;
     height: 60px;
@@ -182,6 +183,7 @@ ul {
     z-index: 2;
 }
 
+/* Formatierungen fuer Ansicht Listview*/
 .myListView li {
     height: 80px;
     line-height: 80px;
@@ -228,17 +230,6 @@ ul {
     float: right;
 }
 
-.added, .owner, .numOfTags {
-    color: lightgray;
-    font-size: small;
-    line-height: 1.1;
-}
-
-.name {
-    font-size: medium;
-    line-height: 1.1;
-}
-
 .myListView .option {
     padding: 0;
     background-image: url("./img/glyphicons/png/glyphicons-518-option-vertical.png");
@@ -253,6 +244,18 @@ ul {
     background-size: auto;
     background-position: top left;
     float: left;
+}
+
+/* Klassen fuer Inhalt in Listenansicht */
+.added, .owner, .numOfTags {
+    color: lightgray;
+    font-size: small;
+    line-height: 1.1;
+}
+
+.name {
+    font-size: medium;
+    line-height: 1.1;
 }
 
 /* disabled elements */
